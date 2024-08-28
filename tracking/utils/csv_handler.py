@@ -1,4 +1,4 @@
-def read_csv(file_path):
+def read_csv(file_path: str):
     """
     reads csv file and returns list of dictionaries with titles from first line as keys and rest as values
     """
@@ -7,7 +7,7 @@ def read_csv(file_path):
         return [{k: v for k, v in zip(keys, line.strip().split(","))} for line in f]
 
 
-def append_csv(file_path, payload):
+def append_csv(file_path: str, payload: dict):
     """
     appends payload to file_path csv
     """
