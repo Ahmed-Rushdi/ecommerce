@@ -3,7 +3,7 @@
 {% block title %}Mart Page{% endblock title %}
 
 {% block content %}
-<form action="/cart" method="get" class="mart-form">
+<form action="{% url "cart" %}" method="get" class="mart-form">
     {% comment %} {% csrf_token %} {% endcomment %}
 
     {% for item in items %}
