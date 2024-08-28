@@ -15,7 +15,7 @@ def append_csv(file_path: str, payload: dict):
         keys = f.readline().strip().split(",")
 
     with open(file_path, "a") as f:
-        f.write(",".join([str(payload[k]) for k in keys]) + "\n")
+        f.write("\n" + ",".join([str(payload[k]) for k in keys]))
 
 
 if __name__ == "__main__":
