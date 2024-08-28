@@ -1,5 +1,5 @@
 import json
-from django.shortcuts import HttpResponse
+from django.http.response import HttpResponse, JsonResponse
 from .utils import csv_handler
 
 # Create your views here.
@@ -11,4 +11,4 @@ def home(request):
         csv_handler.append_csv("./tracking/orders.csv", payload)
         return HttpResponse("OK")
     elif request.method == "GET":
-        return HttpResponse(csv_handler.read_csv("./tracking/orders.csv"))
+        return JsonResponse({"orders": csv_handler.read_csv("./tracking/orders.csv")})
