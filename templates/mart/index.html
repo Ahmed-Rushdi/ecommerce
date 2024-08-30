@@ -1,0 +1,30 @@
+{% extends "base/layout.html" %}
+
+{% block title %}Mart Page{% endblock title %}
+
+{% block content %}
+<form action="{% url "cart" %}" method="get" class="mart-form">
+    {% comment %} {% csrf_token %} {% endcomment %}
+
+    {% for item in items %}
+    
+    <section class="item">
+        <label for="product-{{ item.ProductID }}" style="cursor: pointer;">
+            <ul>
+                {% for field, value in item.items %}
+                <li>
+                    <label>{{ field }}:</label>
+                    <p>{{ value }}</p>
+                </li>
+                {% endfor %}
+                <li>
+                    <input type="checkbox" id="product-{{ item.ProductID }}" name="product-{{ item.ProductID }}" value="{{ item.ProductID }}">
+                </li>
+            </ul>
+        </label>
+    </section>
+    
+    {% endfor %}
+    <button type="submit">Add to Cart</button>
+</form>
+{% endblock content %}

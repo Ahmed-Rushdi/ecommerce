@@ -1,0 +1,11 @@
+ProductID,ProductName,Category,Price,StockQuantity,Supplier,Description
+1001,Wireless Mouse,Electronics,25.99,150,TechCorp,"A high-precision wireless mouse with ergonomic design."
+1002,Mechanical Keyboard,Electronics,89.99,75,TechCorp,"A durable mechanical keyboard with customizable RGB lighting."
+1003,USB-C Hub,Accessories,39.99,200,GadgetWorld,"A multi-port USB-C hub with HDMI, USB 3.0, and SD card reader."
+1004,Noise Cancelling Headphones,Electronics,129.99,60,SoundWave,"Premium over-ear headphones with active noise cancellation."
+1005,4K Monitor,Electronics,299.99,30,VisionDisplays,"A 27-inch 4K UHD monitor with vibrant colors and high contrast."
+1006,Portable SSD,Storage,79.99,120,StorageSolutions,"A compact portable SSD with 1TB storage capacity and fast transfer speeds."
+1007,Smartwatch,Wearables,199.99,90,FutureWear,"A sleek smartwatch with fitness tracking and notification features."
+1008,Wireless Charger,Accessories,29.99,180,GadgetWorld,"A fast wireless charger compatible with multiple devices."
+1009,Tablet Stand,Accessories,19.99,250,DeskEssentials,"An adjustable tablet stand for comfortable viewing angles."
+1010,External Hard Drive,Storage,59.99,100,StorageSolutions,"A reliable external hard drive with 2TB storage capacity."

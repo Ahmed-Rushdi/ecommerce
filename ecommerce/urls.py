@@ -19,9 +19,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-print(admin.site.urls)
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("tracking/", include("tracking.urls")),
+    path("", include("mart.urls")),
 ]

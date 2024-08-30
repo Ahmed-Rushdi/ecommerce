@@ -1,0 +1,43 @@
+{% extends "base/layout.html" %}
+
+{% block title %}Tracking Page{% endblock title %}
+
+
+{% block content %}
+<div class="order-container">
+    <table class="order-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.name }}</td>
+                <td>{{ order.username }}</td>
+                <td>{{ order.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <hr class="divider">
+    <form action="#" method="post" class="order-form">
+        {% csrf_token %}
+        <input type="number" name="id" placeholder="Order ID" class="form-input">
+        <input type="text" name="name" placeholder="Order Name" class="form-input">
+        <input type="text" name="username" placeholder="Username" class="form-input">
+        <select name="status" class="form-select">
+            <option value="requested">Requested</option>
+            <option value="preparing">Preparing</option>
+            <option value="delivering">Delivering</option>
+            <option value="delivered">Delivered</option>
+        </select>
+        <button type="submit" class="form-button">Add</button>
+    </form>
+</div>
+{% endblock %}
