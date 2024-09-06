@@ -9,21 +9,18 @@
         <div class="flex flex-wrap p-3">
             {% for item in items %}
                 <section class="flex flex-col w-[calc(33%-1rem)] border shadow-sm border-secondary p-4 rounded-md m-2">
-                    <label for="product-{{ item.ProductID }}" class="text-light">
+                    <label for="product-{{ item.id }}" class="text-light">
+                        <img src="{{ item.image_url }}"
+                             alt="{{ item.name }} image"
+                             class="w-full max-h-96">
                         <ul class="space-y-2">
-                            {% for field, value in item.items %}
-                                <li class="flex space-x-2">
-                                    <label class="text-secondary">{{ field }}:</label>
-                                    <p class="text-light">{{ value }}</p>
-                                </li>
-                            {% endfor %}
-                            <li class="flex space-x-2">
-                                <input type="checkbox"
-                                       id="product-{{ item.ProductID }}"
-                                       name="product-{{ item.ProductID }}"
-                                       value="{{ item.ProductID }}"
-                                       class="hover:bg-secondary">
-                            </li>
+                            <li>{{ item.name }}</li>
+                            <li>{{ item.price }}</li>
+                            <input type="checkbox"
+                                   id="product-{{ item.id }}"
+                                   name="product-{{ item.id }}"
+                                   value="{{ item.id }}"
+                                   class="hover:bg-secondary">
                         </ul>
                     </label>
                 </section>
