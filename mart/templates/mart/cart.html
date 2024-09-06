@@ -1,0 +1,11 @@
+{% extends "base/layout.html" %}
+{% block title %}
+    Cart Page
+{% endblock title %}
+{% block content %}
+    <h3>Your Cart</h3>
+    <hr>
+    <ul>
+        {% for item in items %}<li>{{ item.name }}</li>{% endfor %}
+    </ul>
+{% endblock content %}

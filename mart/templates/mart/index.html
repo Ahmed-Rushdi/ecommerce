@@ -1,0 +1,31 @@
+{% extends "base/layout.html" %}
+{% block title %}
+    Mart Page
+{% endblock title %}
+{% block content %}
+    <form action="{% url "mart:cart" %}"
+          method="get"
+          class="bg-dark p-4 rounded ">
+        <div class="flex flex-wrap p-3">
+            {% for item in items %}
+                <section class="flex flex-col w-[calc(33%-1rem)] border shadow-sm border-secondary p-4 rounded-md m-2">
+                    <label for="product-{{ item.id }}" class="text-light">
+                        <img src="{{ item.image_url }}"
+                             alt="{{ item.name }} image"
+                             class="w-full max-h-96">
+                        <ul class="space-y-2">
+                            <li>{{ item.name }}</li>
+                            <li>{{ item.price }}</li>
+                            <input type="checkbox"
+                                   id="product-{{ item.id }}"
+                                   name="product-{{ item.id }}"
+                                   value="{{ item.id }}"
+                                   class="hover:bg-secondary">
+                        </ul>
+                    </label>
+                </section>
+            {% endfor %}
+        </div>
+        <button type="submit" class="bg-secondary text-light rounded p-2 mt-4">Add to Cart</button>
+    </form>
+{% endblock content %}
